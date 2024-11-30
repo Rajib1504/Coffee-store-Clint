@@ -3,7 +3,7 @@ import { IoEyedropOutline } from "react-icons/io5";
 import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-const CofeeCard = ({ cofee }) => {
+const CofeeCard = ({ cofee, setCofees, cofees }) => {
   console.log(cofee);
   const { _id, price, photo, details, category, taste, supplier, name, chef } =
     cofee || {};
@@ -32,6 +32,9 @@ const CofeeCard = ({ cofee }) => {
                 text: "Your cofee has been deleted.",
                 icon: "success",
               });
+
+              const remaing = cofees.filter((cof) => cof._id !== _id);
+              setCofees(remaing);
             }
           });
       }
