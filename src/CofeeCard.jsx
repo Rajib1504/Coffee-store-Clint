@@ -4,7 +4,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const CofeeCard = ({ cofee, setCofees, cofees }) => {
-  console.log(cofee);
+  // console.log(cofee);
   const { _id, price, photo, details, category, taste, supplier, name, chef } =
     cofee || {};
   const handelDelete = (_id) => {

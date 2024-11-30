@@ -7,11 +7,13 @@ import AddCofee from "./assets/pages/AddCofee";
 import ViewCofee from "./assets/pages/ViewCofee";
 import UpdateCofee from "./assets/pages/UpdateCofee";
 import CofeeCard from "./CofeeCard";
+import Login from "./assets/pages/Login";
+import Register from "./assets/pages/Register";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch("http://localhost:5000/cofee"),
+    loader: () => fetch("http://localhost:3000/cofee"),
   },
   {
     path: "/addCofee",
@@ -24,11 +26,19 @@ const router = createBrowserRouter([
   {
     path: "/updateCofee/:id",
     element: <UpdateCofee></UpdateCofee>,
-    loader: ({ params }) => fetch(`http://localhost:5000/cofee/${params.id}`),
+    loader: ({ params }) => fetch(`http://localhost:3000/cofee/${params.id}`),
   },
   {
     path: "/cofeeCard",
     element: <CofeeCard></CofeeCard>,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);
 
